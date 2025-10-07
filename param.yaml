@@ -1,0 +1,9 @@
+model:
+  name : "gemini-2.5-flash-lite"
+  max_output_tokens: 1024
+  temperature: 1
+
+run:
+  "number": 3,
+  "subject": "Biology"
+  "tone": "academic"
