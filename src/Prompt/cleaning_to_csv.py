@@ -9,10 +9,10 @@ class Cleaning_to_Csv:
         self.invoker = PromptTemplating()
         logger.info("PromptTemplating initialized.")
 
-    def cleaning(self):
+    def cleaning(self,raw_output):
         logger.info("Cleaning process started.")
         try:
-            text = self.invoker.mcq_maker_prompt_Invoke().strip()
+            text = raw_output.strip()
             text = re.sub(r"^```(?:json)?", "", text)
             text = re.sub(r"```$", "", text)
             text = text.strip()
@@ -28,4 +28,3 @@ class Cleaning_to_Csv:
 
 if __name__ == "__main__":
     c = Cleaning_to_Csv()
-    c.cleaning()

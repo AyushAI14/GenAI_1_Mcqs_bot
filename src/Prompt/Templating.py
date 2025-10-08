@@ -10,9 +10,7 @@ from src.utils.common import read_yaml_file
 with open("response.json", "r") as f:
     response_json = json.load(f)
 
-# Load text content
-with open("data/content_text.txt", "r") as f:
-    Text = f.read()
+
 
 mcq_maker_prompt = """
 Text:{text}
@@ -30,7 +28,7 @@ class PromptTemplating:
         self.param = read_yaml_file("param.yaml")
         self.llm_instance = InitializeLLM()
 
-    def mcq_maker_prompt_Invoke(self):
+    def mcq_maker_prompt_Invoke(self, text):
         mcq_maker_prompt_template = PromptTemplate(
             input_variables=["text", "number", "subject", "tone", "response_json"],
             template=mcq_maker_prompt
@@ -42,7 +40,7 @@ class PromptTemplating:
         )
 
         result = mcq_chain.invoke({
-            "text": Text,
+            "text": text,
             "number": self.param.run.number,
             "subject": self.param.run.subject,
             "tone": self.param.run.tone,

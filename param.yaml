@@ -4,6 +4,6 @@ model:
   temperature: 1
 
 run:
-  "number": 3,
-  "subject": "Biology"
-  "tone": "academic"
+  number: 3
+  subject: "Biology"
+  tone: "academic"
