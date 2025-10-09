@@ -106,7 +106,7 @@ st.markdown("---")
 st.markdown(
     """
     <div style="text-align:center; color:gray">
-    Built with ❤️ using Streamlit & LangChain | Powered by Gemini LLM
+    Built by Ayush using Streamlit & LangChain | Powered by Gemini 
     </div>
     """,
     unsafe_allow_html=True
