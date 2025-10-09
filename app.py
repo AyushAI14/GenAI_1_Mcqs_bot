@@ -88,7 +88,7 @@ if st.button("🚀 Generate MCQs"):
 
             st.success("✅ MCQs generated successfully!")
             st.subheader("🧩 Generated MCQs")
-            st.dataframe(df, use_container_width=True)
+            st.dataframe(df, width='stretch')
 
             csv = df.to_csv(index=False).encode('utf-8')
             st.download_button(
